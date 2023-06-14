@@ -296,7 +296,7 @@ import ahb3lite_pkg::*;
 
   //read address
   assign nxt_adr = gen_nxt_adr(HADDR, HSIZE, HBURST);
-  assign raddr = !was_ahb_noseq && !ahb_noseq ? nxt_adr[MEM_ABITS_LSB +: MEM_ABITS] : HADDR[MEM_ABITS_LSB +: MEM_ABITS]; 
+  assign raddr = HADDR[MEM_ABITS_LSB +: MEM_ABITS]; 
 
   //store write address
   always @(posedge HCLK)
