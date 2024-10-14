@@ -68,7 +68,8 @@
 //   Other               :                                         
 // -FHDR-------------------------------------------------------------
 
-
+`include "ahb3lite_pkg.sv"
+`include "rl_ram_1r1w.sv"
 module ahb3lite_sram1rw
 import ahb3lite_pkg::*;
 #(
@@ -78,7 +79,7 @@ import ahb3lite_pkg::*;
   parameter HDATA_SIZE        = 32,
   parameter TECHNOLOGY        = "GENERIC",
   parameter REGISTERED_OUTPUT = "NO",
-  parameter INIT_FILE         = ""
+  parameter INIT_FILE         = "mem_init.mem"
 )
 (
   input                       HRESETn,
